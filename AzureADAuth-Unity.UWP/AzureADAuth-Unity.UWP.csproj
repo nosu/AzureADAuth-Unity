@@ -7,8 +7,8 @@
     <ProjectGuid>{BB7E0BE9-2301-407C-905E-8D25202E20AE}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AzureADAuth_Unity.UWP</RootNamespace>
-    <AssemblyName>AzureADAuth-Unity.UWP</AssemblyName>
+    <RootNamespace>AzureADAuthUnity</RootNamespace>
+    <AssemblyName>AzureADAuthUnity</AssemblyName>
     <DefaultLanguage>ja-JP</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17134.0</TargetPlatformVersion>
@@ -106,8 +106,9 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="AuthClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebTokenResponseExtension.cs" />
     <EmbeddedResource Include="Properties\AzureADAuth_Unity.UWP.rd.xml" />
   </ItemGroup>
   <ItemGroup>
@@ -115,6 +116,7 @@
       <Version>6.1.5</Version>
     </PackageReference>
   </ItemGroup>
+  <Import Project="..\AzureADAuth-Unity.Shared\AzureADAuth-Unity.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>
