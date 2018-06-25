@@ -12,7 +12,6 @@ namespace AzureADAuthUnity {
         private const string ProviderId = "https://login.microsoft.com";
         private const string Authority = "organizations";
         private const string AccountScopeRequested = "";
-        private const string StoredAccountKey = "azureaccountid";
         private readonly string ClientId;
         private readonly string Resource;
 
@@ -45,7 +44,7 @@ namespace AzureADAuthUnity {
 
                 WebTokenRequestResult webTokenRequestResult = await WebAuthenticationCoreManager.RequestTokenAsync(webTokenRequest);
                 if(webTokenRequestResult.ResponseStatus == WebTokenRequestStatus.Success) {
-                    OnAuthSuccess(webTokenRequestResult.ResponseData[0].ConvertToWebAuthToken());
+                    OnAuthSuccess(webTokenRequestResult.ResponseData[0].ConvertToAzureADToken());
                 } else {
                     OnAuthFailed($"Auth failed: {webTokenRequestResult.ResponseError.ErrorMessage}");
                 }
